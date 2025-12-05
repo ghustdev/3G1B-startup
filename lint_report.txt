@@ -1,0 +1,75 @@
+
+> temp-app@0.1.0 lint
+> eslint
+
+
+C:\development-windows\3G1B-startup\src\components\sections\Blueprint.tsx
+  5:48  warning  'Globe' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\development-windows\3G1B-startup\src\components\sections\Hero.tsx
+  25:31  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\development-windows\3G1B-startup\src\components\sections\Hero.tsx:25:31
+  23 |                 }}
+  24 |                 transition={{ 
+> 25 |                     duration: Math.random() * 3 + 2, 
+     |                               ^^^^^^^^^^^^^ Cannot call impure function
+  26 |                     repeat: Infinity, 
+  27 |                     delay: Math.random() * 5,
+  28 |                     ease: "linear"                   react-hooks/purity
+  27:28  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\development-windows\3G1B-startup\src\components\sections\Hero.tsx:27:28
+  25 |                     duration: Math.random() * 3 + 2, 
+  26 |                     repeat: Infinity, 
+> 27 |                     delay: Math.random() * 5,
+     |                            ^^^^^^^^^^^^^ Cannot call impure function
+  28 |                     ease: "linear"
+  29 |                 }}
+  30 |                 className="absolute text-white/20"  react-hooks/purity
+  32:29  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\development-windows\3G1B-startup\src\components\sections\Hero.tsx:32:29
+  30 |                 className="absolute text-white/20"
+  31 |                 style={{
+> 32 |                     top: `${Math.random() * 100}%`,
+     |                             ^^^^^^^^^^^^^ Cannot call impure function
+  33 |                     left: `${Math.random() * 100}%`,
+  34 |                 }}
+  35 |             >                               react-hooks/purity
+  33:30  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\development-windows\3G1B-startup\src\components\sections\Hero.tsx:33:30
+  31 |                 style={{
+  32 |                     top: `${Math.random() * 100}%`,
+> 33 |                     left: `${Math.random() * 100}%`,
+     |                              ^^^^^^^^^^^^^ Cannot call impure function
+  34 |                 }}
+  35 |             >
+  36 |                 <Star size={Math.random() * 10 + 5} fill="currentColor" />      react-hooks/purity
+  36:29  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\development-windows\3G1B-startup\src\components\sections\Hero.tsx:36:29
+  34 |                 }}
+  35 |             >
+> 36 |                 <Star size={Math.random() * 10 + 5} fill="currentColor" />
+     |                             ^^^^^^^^^^^^^ Cannot call impure function
+  37 |             </motion.div>
+  38 |         ))}
+  39 |                                                                                                   react-hooks/purity
+
+C:\development-windows\3G1B-startup\src\components\sections\Partners.tsx
+  4:10  warning  'motion' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 7 problems (5 errors, 2 warnings)
+
