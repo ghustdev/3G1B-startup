@@ -4,6 +4,7 @@ import { Blueprint } from "@/components/sections/Blueprint";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Partners } from "@/components/sections/Partners";
 import { Team } from "@/components/sections/Team";
+import { TeamPhoto } from "@/components/sections/TeamPhoto";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Blueprint />
       <Portfolio />
       <Team />
+      <TeamPhoto />
       <Contact />
       <Footer />
     </div>

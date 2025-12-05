@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -34,8 +35,8 @@ export function Hero() {
           className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-white/5 border border-white/10 backdrop-blur-md"
         >
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[hsl(var(--brand-cyan))] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[hsl(var(--brand-cyan))]"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </span>
           <span className="text-xs md:text-sm font-medium text-gray-300 tracking-wide uppercase">{t.hero.badge}</span>
         </motion.div>
@@ -67,13 +68,17 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
         >
-          <Button size="lg" className="w-full sm:w-auto h-14 px-10 text-lg rounded-full bg-white text-black hover:bg-gray-200 font-semibold transition-all hover:scale-105">
-            {t.hero.ctaPrimary}
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-10 text-lg rounded-full border-white/20 hover:bg-white/10 text-white backdrop-blur-sm transition-all hover:scale-105">
-            {t.hero.ctaSecondary}
-          </Button>
+          <Link href="/start-project" className="w-full sm:w-auto">
+            <Button size="lg" className="w-full h-14 px-10 text-lg rounded-full bg-white text-black hover:bg-gray-200 font-semibold transition-all hover:scale-105">
+                {t.hero.ctaPrimary}
+                <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
+          <Link href="/history" className="w-full sm:w-auto">
+            <Button size="lg" variant="outline" className="w-full h-14 px-10 text-lg rounded-full border-white/20 hover:bg-white/10 text-white backdrop-blur-sm transition-all hover:scale-105">
+                {t.hero.ctaSecondary}
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

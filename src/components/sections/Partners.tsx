@@ -5,11 +5,11 @@ import { Building2, GraduationCap, Rocket, Code2, Globe2, Cpu } from 'lucide-rea
 
 const partners = [
   { name: "UFG", icon: <GraduationCap size={40} />, type: "Universidade" },
-  { name: "TechHub", icon: <Rocket size={40} />, type: "Aceleradora" },
-  { name: "DevHouse", icon: <Code2 size={40} />, type: "Parceiro Tech" },
-  { name: "Global Ventures", icon: <Globe2 size={40} />, type: "Investidor" },
+  { name: "HubGoiás", icon: <Rocket size={40} />, type: "Aceleradora" },
+  { name: "GDC", icon: <Code2 size={40} />, type: "Parceiro Tech - Google" },
+  { name: "AKCIT", icon: <Globe2 size={40} />, type: "Aceleradora - AKCIT" },
   { name: "Inova Goiás", icon: <Building2 size={40} />, type: "Governo" },
-  { name: "Silicon Cerrado", icon: <Cpu size={40} />, type: "Comunidade" },
+  { name: "GovTech", icon: <Cpu size={40} />, type: "Governo" },
 ];
 
 import { useLanguage } from '@/contexts/LanguageContext';

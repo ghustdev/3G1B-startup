@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
+import { MouseFollower } from "@/components/ui/MouseFollower";
 import { Analytics } from '@vercel/analytics/next';
 
 const outfit = Outfit({
@@ -38,6 +39,7 @@ export default function RootLayout({
         className={`${outfit.variable} ${inter.variable} font-sans antialiased bg-background text-foreground selection:bg-[hsl(var(--brand-purple))]/30 selection:text-white`}
       >
         <LanguageProvider>
+          <MouseFollower />
           <Header />
           <main className="min-h-screen flex flex-col">
             {children}

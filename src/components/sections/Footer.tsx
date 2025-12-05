@@ -10,7 +10,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export function Footer() {
   const { t } = useLanguage();
   return (
-    <footer className="bg-black border-t border-white/10 pt-16 pb-8">
+    <footer className="relative z-10 bg-black border-t border-white/10 pt-20 pb-10 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-[hsl(var(--brand-purple))] to-transparent opacity-50" />
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}
@@ -71,7 +73,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} 3G1B Startup. {t.footer.rights}
           </p>
           <p className="text-sm text-gray-500 flex items-center gap-1">
-            {t.footer.madeWith} <span className="text-red-500">by 3G1B Startup</span> em Goiânia, Brasil.
+            {t.footer.madeWith} <span className="text-[hsl(var(--brand-purple))] font-bold">3G1B</span>
           </p>
         </div>
       </div>

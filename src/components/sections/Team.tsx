@@ -17,28 +17,32 @@ export function Team() {
       role: t.team.roles.gustavo,
       bio: t.team.bios.gustavo,
       initials: "GU",
-      color: "bg-blue-500"
+      color: "bg-blue-500",
+      image: "/gustavo.jpg"
     },
     {
       name: "Arthur",
       role: t.team.roles.arthur,
       bio: t.team.bios.arthur,
       initials: "AR",
-      color: "bg-purple-500"
+      color: "bg-purple-500",
+      image: "/arthur.png"
     },
     {
       name: "Felipe",
       role: t.team.roles.felipe,
       bio: t.team.bios.felipe,
       initials: "FE",
-      color: "bg-green-500"
+      color: "bg-green-500",
+      image: "/felipe.png"
     },
     {
       name: "Heitor",
       role: t.team.roles.heitor,
       bio: t.team.bios.heitor,
       initials: "HE",
-      color: "bg-yellow-500"
+      color: "bg-yellow-500",
+      image: "/heitor.png"
     }
   ];
 
@@ -47,7 +51,7 @@ export function Team() {
         {/* Background Decoration */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[hsl(var(--brand-purple))]/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="container px-4 mx-auto text-center relative z-10">
+      <div className="container px-8 md:px-12 lg:px-20 mx-auto text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -77,7 +81,7 @@ export function Team() {
                     <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-[hsl(var(--brand-cyan))] transition-colors duration-300">
                         {/* Using UI Avatars for consistent placeholders */}
                         <Avatar className="w-full h-full">
-                            <AvatarImage src={`https://ui-avatars.com/api/?name=${member.name}&background=random&color=fff&size=256`} />
+                            <AvatarImage src={member.image} className="object-cover" />
                             <AvatarFallback>{member.initials}</AvatarFallback>
                         </Avatar>
                     </div>

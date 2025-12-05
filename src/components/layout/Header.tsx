@@ -17,6 +17,7 @@ export function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { name: t.header.about, href: '#about' },
@@ -40,10 +41,10 @@ export function Header() {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed z-50 transition-all duration-500 top-4 md:top-6 left-1/2 -translate-x-1/2 w-[95%] md:w-[90%] max-w-5xl rounded-full border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.5)] py-3 ${
         isScrolled
-          ? 'bg-black/60 backdrop-blur-xl border-b border-white/5 py-3 shadow-lg'
-          : 'bg-transparent py-6'
+          ? 'bg-black/80 backdrop-blur-md'
+          : 'bg-black/50 backdrop-blur-sm'
       }`}
       initial={{ y: 0 }}
       animate={{ y: isVisible ? 0 : -100 }}
@@ -71,9 +72,10 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-gray-300 hover:text-white hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition-all duration-300"
+              className="relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 group"
             >
               {item.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[hsl(var(--brand-cyan))] transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
           
@@ -102,7 +104,7 @@ export function Header() {
             >
                 <Globe size={20} />
             </Button>
-            <Sheet>
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
                     <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
                         <Menu className="w-6 h-6" />
@@ -124,6 +126,7 @@ export function Header() {
                             <Link
                                 key={item.href}
                                 href={item.href}
+                                onClick={() => setIsOpen(false)}
                                 className="text-lg font-medium hover:text-[hsl(var(--brand-cyan))] transition-colors text-center"
                             >
                                 {item.name}

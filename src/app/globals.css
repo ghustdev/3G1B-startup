@@ -139,6 +139,43 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Global Link Hover Effect */
+  a {
+    transition: color 0.3s ease;
+    text-decoration: none;
+    position: relative;
+  }
+
+  a:hover {
+    color: var(--brand-purple);
+  }
+
+  /* Interactive Elements Hover */
+  button,
+  .cursor-pointer {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  button:active {
+    transform: scale(0.98);
+  }
+
+  /* Ensure text breaks on small screens */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  li,
+  a {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 100%;
+  }
 }
 
 /* Custom Utilities */
