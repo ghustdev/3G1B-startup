@@ -71,7 +71,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} 3G1B Startup. {t.footer.rights}
           </p>
           <p className="text-sm text-gray-500 flex items-center gap-1">
-            {t.footer.madeWith} <span className="text-red-500">❤️</span> em Goiânia, Brasil.
+            {t.footer.madeWith} <span className="text-red-500">by 3G1B Startup</span> em Goiânia, Brasil.
           </p>
         </div>
       </div>
