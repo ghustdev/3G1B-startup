@@ -49,7 +49,7 @@ src/
 ## 🏁 Getting Started
 
 4.  **Open your browser:**
-    Navigate to [http://localhost:3000](http://localhost:3000) to see the application running.
+    Navigate to [3g1b.com.br](https://3g1b-startup.vercel.app/) to see the application running.
 
 ## 🌍 Deployment
 
@@ -75,4 +75,4 @@ This project is proprietary software of **3G1B Startup**. All rights reserved.
 
 ---
 
-Made for 3G1B Startup in Goiânia, Brazil.
+Made by 3G1B Startup in Goiânia, Brazil.
