@@ -1,6 +1,6 @@
 # 3G1B Startup - Digital Innovation Studio
 
-![3G1B Banner](/public/favicon.png)
+![3G1B Banner](https://3g1b-startup.vercel.app/)
 
 > **Transforming Ideas into Digital Reality.**
 > *Transformando Ideias em Realidade Digital.*
