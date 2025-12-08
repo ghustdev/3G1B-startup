@@ -71,7 +71,7 @@ function PartnerCard({ partner }: { partner: Partner }) {
         <div className="flex flex-col items-center gap-3 opacity-70 hover:opacity-100 transition-opacity cursor-pointer group/item w-32 md:w-40 shrink-0">
             <div className="p-4 md:p-6 rounded-xl bg-white/5 border border-white/10 group-hover/item:border-[hsl(var(--brand-purple))] transition-colors w-full flex justify-center aspect-square items-center">
                 <div className={`${getIconColor(partner.name)} transition-colors transform group-hover/item:scale-110 duration-300`}>
-                    {React.cloneElement(partner.icon as React.ReactElement, { size: 48 })}  
+                    {React.cloneElement(partner.icon as React.ReactElement, { size: 48 } as any)}  
                 </div>
             </div>
             <span className="text-sm font-medium text-gray-400 group-hover/item:text-white transition-colors text-wrap text-center">{partner.name}</span>
