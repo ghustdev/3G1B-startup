@@ -1,3 +1,9 @@
+/* 
+  Estilos Globais
+  - Configuração do Tailwind CSS
+  - Variáveis de Cores (:root)
+  - Estilos base para elementos HTML e Scrollbar personalizada
+*/
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
@@ -152,13 +158,25 @@
   }
 
   /* Interactive Elements Hover */
+  /* Interactive Elements Hover */
   button,
-  .cursor-pointer {
-    transition: transform 0.2s ease, opacity 0.2s ease;
+  .cursor-pointer,
+  a {
+    cursor: pointer;
+    /* Ensure pointer cursor */
+    transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
   }
 
-  button:active {
-    transform: scale(0.98);
+  button:hover,
+  a:hover,
+  .cursor-pointer:hover {
+    filter: brightness(1.2);
+    /* Make it pop */
+  }
+
+  button:active,
+  a:active {
+    transform: scale(0.95);
   }
 
   /* Ensure text breaks on small screens */

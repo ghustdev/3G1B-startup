@@ -1,3 +1,7 @@
+// Componente: Header (Cabeçalho de Navegação)
+// Descrição: Barra de navegação fixa com efeito de vidro (blur).
+// Comporta-se de forma responsiva (Menu Hamburger no mobile) e esconde ao rolar para baixo.
+
 'use client';
 
 import React, { useState } from 'react';
@@ -5,11 +9,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Menu } from 'lucide-react';
+import { Menu, Globe } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Globe } from 'lucide-react';
 
 export function Header() {
   const { scrollY } = useScroll();

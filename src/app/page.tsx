@@ -1,3 +1,7 @@
+// Página Inicial (Home)
+// Composta por diversas seções empilhadas verticalmente.
+// Cada componente representa um bloco visual da landing page.
+
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Blueprint } from "@/components/sections/Blueprint";

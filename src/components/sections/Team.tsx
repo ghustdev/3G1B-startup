@@ -1,10 +1,14 @@
+// Componente: Team (Seção de Fundadores)
+// Descrição: Apresenta os fundadores da startup com cards interativos.
+// Exibe links sociais (Linkedin/Github) condicionalmente.
+
 'use client';
 
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
-import { Linkedin, Twitter, Github } from 'lucide-react';
+import { Linkedin, Github } from 'lucide-react';
 
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -18,7 +22,9 @@ export function Team() {
       bio: t.team.bios.gustavo,
       initials: "GU",
       color: "bg-blue-500",
-      image: "/gustavo.jpg"
+      image: "/gustavo.jpg",
+      linkedin: "https://www.linkedin.com/in/gustavo-cardosoc-costa/",
+      github: "https://github.com/ghustdev"
     },
     {
       name: "Arthur",
@@ -26,7 +32,9 @@ export function Team() {
       bio: t.team.bios.arthur,
       initials: "AR",
       color: "bg-purple-500",
-      image: "/arthur.png"
+      image: "/arthur.png",
+      linkedin: "https://www.linkedin.com/in/arthur-martins-batista-9b0715371/",
+      github: "https://github.com/ArthurMartins-9"
     },
     {
       name: "Felipe",
@@ -34,7 +42,9 @@ export function Team() {
       bio: t.team.bios.felipe,
       initials: "FE",
       color: "bg-green-500",
-      image: "/felipe.png"
+      image: "/felipe.png",
+      linkedin: "https://www.linkedin.com/in/felipe-luz-leroy-0b784b37b/#",
+      github: "https://github.com/leroyzitos"
     },
     {
       name: "Heitor",
@@ -42,7 +52,9 @@ export function Team() {
       bio: t.team.bios.heitor,
       initials: "HE",
       color: "bg-yellow-500",
-      image: "/heitor.png"
+      image: "/heitor.png",
+      linkedin: "https://www.linkedin.com/in/heitor-vaz/",
+      github: "https://github.com/Heitorvazeg"
     }
   ];
 
@@ -56,10 +68,10 @@ export function Team() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20"
+          className="mb-20 flex flex-col items-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-            {t.team.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--brand-cyan))] to-[hsl(var(--brand-purple))]">{t.team.titleHighlight}</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white text-center">
+            {t.team.title}
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             {t.team.subtitle}
@@ -97,9 +109,12 @@ export function Team() {
                   </p>
                   
                   <div className="flex gap-4 opacity-60 group-hover:opacity-100 transition-opacity">
-                    <a href="#" className="text-white hover:text-[hsl(var(--brand-cyan))] transition-colors"><Linkedin size={18} /></a>
-                    <a href="#" className="text-white hover:text-[hsl(var(--brand-cyan))] transition-colors"><Twitter size={18} /></a>
-                    <a href="#" className="text-white hover:text-[hsl(var(--brand-cyan))] transition-colors"><Github size={18} /></a>
+                    {member.linkedin && (
+                         <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-white hover:text-[hsl(var(--brand-cyan))] transition-colors"><Linkedin size={18} /></a>
+                    )}
+                    {member.github && (
+                        <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-white hover:text-[hsl(var(--brand-cyan))] transition-colors"><Github size={18} /></a>
+                    )}
                   </div>
                 </CardContent>
               </Card>

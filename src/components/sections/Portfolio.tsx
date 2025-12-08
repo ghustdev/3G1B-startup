@@ -1,3 +1,7 @@
+// Componente: Portfolio (Projetos)
+// Descrição: Galeria de projetos realizados.
+// Exibe os 3 principais projetos e um link para ver todos.
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -11,7 +15,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export function Portfolio() {
   const { t } = useLanguage();
   
-  // Display only the top 3 projects
+  // Exibir apenas os 3 primeiros projetos na home
   const displayedProjects = projects.slice(0, 3);
 
   return (

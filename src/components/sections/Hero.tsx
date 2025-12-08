@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -9,8 +9,42 @@ import Link from 'next/link';
 
 import { useLanguage } from '@/contexts/LanguageContext';
 
+  
+
 export function Hero() {
   const { t } = useLanguage();
+  
+  const [text, setText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const handleTyping = () => {
+      // Usar frases do dicionário de tradução
+      const currentPhrases = t.hero.phrases || ["Tecnologia Inovadora", "Realidade Digital", "Produtos Vencedores"];
+      const i = loopNum % currentPhrases.length;
+      const fullText = currentPhrases[i];
+
+      setText(isDeleting 
+        ? fullText.substring(0, text.length - 1) 
+        : fullText.substring(0, text.length + 1)
+      );
+
+      setTypingSpeed(isDeleting ? 30 : 150);
+
+      if (!isDeleting && text === fullText) {
+        setTimeout(() => setIsDeleting(true), 1500); // Pause at end
+      } else if (isDeleting && text === '') {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setTypingSpeed(500); // Pause before new word
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, loopNum, typingSpeed]); // Dependencies for effect
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-black">
@@ -45,11 +79,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 text-white max-w-5xl leading-[1.1] mx-auto"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 text-white max-w-5xl leading-[1.1] mx-auto min-h-[160px] md:min-h-[220px] flex flex-col justify-center"
         >
           {t.hero.title} <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--brand-cyan))] via-white to-[hsl(var(--brand-purple))]">
-            {t.hero.titleHighlight}
+            {text}
+            <span className="text-white animate-pulse ml-1">|</span>
           </span>
         </motion.h1>
 

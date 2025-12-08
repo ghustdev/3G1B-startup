@@ -1,3 +1,7 @@
+// Componente: About (Sobre Nós)
+// Descrição: Apresenta a missão e os valores da empresa.
+// Utiliza cards animados para destacar pontos chave.
+
 'use client';
 
 import React from 'react';

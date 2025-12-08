@@ -1,3 +1,6 @@
+// Componente: Footer (Rodapé)
+// Descrição: Informações finais, links úteis, redes sociais e direitos autorais.
+
 'use client';
 
 import React from 'react';

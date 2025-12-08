@@ -1,5 +1,9 @@
 'use client';
 
+// Contexto de Idioma
+// Gerencia o estado global do idioma (Português/Inglês) da aplicação.
+// Permite que qualquer componente acesse e modifique o idioma atual.
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { dictionary, Language } from '@/lib/i18n';
 
@@ -14,6 +18,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>('pt');
 
+  // Alterna entre 'pt' e 'en'
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === 'pt' ? 'en' : 'pt'));
   };
@@ -21,7 +26,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const value = {
     language,
     toggleLanguage,
-    t: dictionary[language],
+    t: dictionary[language], // Fornece o dicionário traduzido atual
   };
 
   return (
@@ -31,6 +36,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+// Hook personalizado para consumir o contexto
 export function useLanguage() {
   const context = useContext(LanguageContext);
   if (context === undefined) {
@@ -38,3 +44,4 @@ export function useLanguage() {
   }
   return context;
 }
+

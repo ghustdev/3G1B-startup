@@ -1,3 +1,7 @@
+// Dicionário de Internacionalização (i18n)
+// Contém todas as strings de texto do sistema em Português (pt) e Inglês (en).
+// Centraliza o conteúdo textual para facilitar a tradução e manutenção.
+
 export type Language = 'pt' | 'en';
 
 export const dictionary = {
@@ -13,9 +17,14 @@ export const dictionary = {
       badge: "Making Ideas",
       title: "Transformando Ideias em",
       titleHighlight: "Realidade Digital",
-      description: "A 3G1B é um estúdio de inovação focado em criar produtos digitais que definem o futuro. Design estratégico, tecnologia de ponta e execução impecável.",
+      description: "A 3G1B é uma Startup de inovação focada em criar produtos digitais que definem o futuro. Design estratégico, tecnologia de ponta e execução impecável.",
       ctaPrimary: "Iniciar Projeto",
-      ctaSecondary: "Nossa História"
+      ctaSecondary: "Nossa História",
+      phrases: [
+        "Tecnologia Inovadora",
+        "Realidade Digital",
+        "Produtos Vencedores"
+      ]
     },
     partners: {
       title: "Confiam na",
@@ -53,20 +62,20 @@ export const dictionary = {
       viewCode: "Ver Código"
     },
     team: {
-      title: "Quem Faz",
-      titleHighlight: "Acontecer",
+      title: "Fundadores que constroem",
+      titleHighlight: "",
       subtitle: "Um time multidisciplinar unido pelo propósito de inovar.",
       roles: {
-        gustavo: "CEO & Full Stack Developer",
-        arthur: "CPO & Product Designer",
-        felipe: "CTO & Backend Engineer",
-        heitor: "CMO & Growth Strategist"
+        gustavo: "CEO & Full Stack Developer & Growth Strategist",
+        arthur: "CTO & Backend Engineer & DevOps",
+        felipe: "CPO & Product Designer",
+        heitor: "CMO & Full Stack Developer & Growth Strategist"
       },
       bios: {
-        gustavo: "Visionário tecnológico com paixão por arquiteturas escaláveis.",
-        arthur: "Mestre em criar interfaces que encantam e convertem.",
-        felipe: "Especialista em segurança e infraestrutura cloud.",
-        heitor: "Estrategista focado em crescimento e posicionamento de marca."
+        gustavo: "Visionário tecnológico com paixão por desenvolvimento de software e arquiteturas escaláveis.",
+        arthur: "Especialista em DevOps e segurança de infraestrutura.",
+        felipe: "Mestre em criar interfaces que encantam e convertem.",
+        heitor: "Desenvolvedor e estrategista focado em crescimento e posicionamento de marca."
       }
     },
     contact: {
@@ -157,28 +166,28 @@ export const dictionary = {
       subtitle: "A jornada de 3 Goianos e 1 Baiano rumo à inovação.",
       timeline: {
         spark: {
-          year: "2023",
+          year: "2025",
           title: "A Faísca",
           subtitle: "Onde tudo começou",
-          description: "Três desenvolvedores se encontram em um Hackathon. O desafio era grande, mas a visão era maior: criar software que não apenas funcionasse, mas que perdurasse. Ali, entre linhas de código e café, nasceu a ideia da 3G1B."
+          description: "Quatro desenvolvedores se encontram em um Hackathon. O desafio era grande, mas a visão era maior: criar software, ideias e inovações que não apenas funcionasse, mas que perdurasse. Ali, entre linhas de código e café, nasceu a ideia da 3G1B, uma Startup de Inovação Tecnológica."
         },
         foundation: {
-          year: "Início de 2024",
+          year: "2025",
           title: "A Fundação",
           subtitle: "Construindo o MVP",
-          description: "Noites em claro e dedicação total. O lançamento do 'Projeto Zen' validou nossa metodologia ágil e design centrado no usuário. Aprendemos que a excelência não é um ato, mas um hábito."
+          description: "Noites em claro e dedicação total. O lançamento do 'Projeto Zen' validou nossa metodologia ágil e design centrado no usuário. Aprendemos que a excelência não é um ato, mas um hábito. Aplicamos esse e vários outros projetos em incubadoras, investidores, hackathons e eventos de inovação."
         },
         pivot: {
-          year: "Final de 2024",
+          year: "2025",
           title: "A Evolução",
           subtitle: "Arquitetura de Alto Nível",
-          description: "Percebemos que o mercado precisava de mais do que apps; precisava de ecossistemas digitais. Pivotamos para focar em arquitetura de software robusta e integração com IA, firmando parcerias estratégicas com HubGoiás e Google Developer Groups."
+          description: "Percebemos que o mercado precisava de mais do que apps; precisava de ecossistemas digitais. Pivotamos para focar em arquitetura de software robusta e integração com IA, firmando parcerias estratégicas com o Governo de Goiás, HubGoiás e Google Developer Groups."
         },
         expansion: {
           year: "2025",
           title: "A Expansão",
           subtitle: "Escalando Fronteiras",
-          description: "Com o time crescendo, lançamos o 'Guardian 60+' e o 'EduVerse'. A 3G1B se estabelece como referência em inovação tecnológica no Centro-Oeste, transformando complexidade em soluções elegantes."
+          description: "Com um time excepcional, a 3G1B se estabelece como referência em inovação tecnológica no Centro-Oeste, transformando complexidade em soluções elegantes."
         },
         vision: {
           year: "Futuro",
@@ -235,9 +244,14 @@ export const dictionary = {
       badge: "Making Ideas",
       title: "Transforming Ideas into",
       titleHighlight: "Digital Reality",
-      description: "3G1B is an innovation studio focused on creating digital products that define the future. Strategic design, cutting-edge technology, and flawless execution.",
+      description: "3G1B is an innovation Startup focused on creating digital products that define the future. Strategic design, cutting-edge technology, and flawless execution.",
       ctaPrimary: "Start Project",
-      ctaSecondary: "Our History"
+      ctaSecondary: "Our History",
+      phrases: [
+        "Innovative Technology",
+        "Digital Reality",
+        "Winning Products"
+      ]
     },
     partners: {
       title: "Trusted by",
@@ -285,10 +299,10 @@ export const dictionary = {
         heitor: "CMO & Growth Strategist"
       },
       bios: {
-        gustavo: "Tech visionary with a passion for scalable architectures.",
-        arthur: "Master at creating interfaces that delight and convert.",
-        felipe: "Specialist in security and cloud infrastructure.",
-        heitor: "Strategist focused on growth and brand positioning."
+        gustavo: "Technological visionary with a passion for software development and scalable architectures.",
+        arthur: "Specialist in DevOps and infrastructure security.",
+        felipe: "Master at creating interfaces that delight and convert.",
+        heitor: "Developer and strategist focused on growth and brand positioning."
       }
     },
     contact: {
@@ -379,28 +393,28 @@ export const dictionary = {
       subtitle: "The journey of 3 Goianos and 1 Baiano towards innovation.",
       timeline: {
         spark: {
-          year: "2023",
+          year: "2025",
           title: "The Spark",
           subtitle: "Where it all began",
-          description: "Three developers meet at a Hackathon. The challenge was big, but the vision was bigger: to create software that not only worked but lasted. There, between lines of code and coffee, the idea of 3G1B was born."
+          description: "Four developers meet at a Hackathon. The challenge was big, but the vision was bigger: to create software, ideas, and innovations that not only worked but lasted. There, between lines of code and coffee, the idea of 3G1B, a Tech Innovation Startup, was born."
         },
         foundation: {
-          year: "Early 2024",
+          year: "2025",
           title: "The Foundation",
           subtitle: "Building the MVP",
-          description: "Sleepless nights and total dedication. The launch of 'Project Zen' validated our agile methodology and user-centric design. We learned that excellence is not an act, but a habit."
+          description: "Sleepless nights and total dedication. The launch of 'Project Zen' validated our agile methodology and user-centric design. We learned that excellence is not an act, but a habit. We applied this and several other projects in incubators, investors, hackathons, and innovation events."
         },
         pivot: {
-          year: "Late 2024",
+          year: "2025",
           title: "The Pivot",
           subtitle: "High-Level Architecture",
-          description: "We realized the market needed more than apps; it needed digital ecosystems. We pivoted to focus on robust software architecture and AI integration, establishing strategic partnerships with HubGoiás and Google Developer Groups."
+          description: "We realized the market needed more than apps; it needed digital ecosystems. We pivoted to focus on robust software architecture and AI integration, establishing strategic partnerships with the Government of Goiás, HubGoiás, and Google Developer Groups."
         },
         expansion: {
           year: "2025",
           title: "The Expansion",
           subtitle: "Scaling Borders",
-          description: "With the team growing, we launched 'Guardian 60+' and 'EduVerse'. 3G1B establishes itself as a reference in technological innovation in the Midwest, transforming complexity into elegant solutions."
+          description: "With an exceptional team, 3G1B establishes itself as a reference in technological innovation in the Midwest, transforming complexity into elegant solutions."
         },
         vision: {
           year: "Future",

@@ -1,3 +1,7 @@
+// Componente: Contact (Seção de Contato)
+// Descrição: Formulário de contato e informações diretas (email, telefone, mapa).
+// Integração com mailto para envio simples.
+
 'use client';
 
 import React from 'react';
@@ -12,8 +16,17 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 export function Contact() {
   const { t } = useLanguage();
   return (
-    <section id="contact" className="py-24 bg-black relative">
-      <div className="container px-8 md:px-12 lg:px-20 mx-auto">
+    <section id="contact" className="py-24 bg-black relative overflow-hidden">
+        {/* Background Elements - Futuristic Grid (Shared with Hero/Blueprint) */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+             {/* Grid Pattern */}
+             <div 
+                className="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"
+            />
+            {/* Gradient Orbs */}
+            <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-[hsl(var(--brand-purple))]/10 rounded-full blur-[150px]" />
+        </div>
+      <div className="container px-8 md:px-12 lg:px-20 mx-auto relative z-10">
         <div className="flex flex-col gap-16">
           <motion.div
             initial={{ opacity: 0, y: -20 }}

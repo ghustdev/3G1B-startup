@@ -3,6 +3,8 @@
 import React from 'react';
 import { Building2, GraduationCap, Rocket, Code2, Globe2, Cpu } from 'lucide-react';
 
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const partners = [
   { name: "UFG", icon: <GraduationCap size={40} />, type: "Universidade" },
   { name: "HubGoiás", icon: <Rocket size={40} />, type: "Aceleradora" },
@@ -11,8 +13,6 @@ const partners = [
   { name: "Inova Goiás", icon: <Building2 size={40} />, type: "Governo" },
   { name: "GovTech", icon: <Cpu size={40} />, type: "Governo" },
 ];
-
-import { useLanguage } from '@/contexts/LanguageContext';
 
 export function Partners() {
   const { t } = useLanguage();
@@ -28,43 +28,55 @@ export function Partners() {
       </div>
 
       <div className="relative flex overflow-x-hidden group">
-        <div className="animate-marquee whitespace-nowrap flex gap-16 items-center">
+        <div className="animate-marquee whitespace-nowrap flex gap-12 items-center">
           {/* First Loop */}
           {partners.map((partner, index) => (
-            <div key={index} className="flex flex-col items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-pointer group/item">
-                <div className="p-4 rounded-xl bg-white/5 border border-white/10 group-hover/item:border-[hsl(var(--brand-purple))] transition-colors">
-                    <div className="text-white group-hover/item:text-[hsl(var(--brand-purple))] transition-colors">
-                        {partner.icon}
-                    </div>
-                </div>
-                <span className="text-sm font-medium text-gray-500 group-hover/item:text-white transition-colors">{partner.name}</span>
-            </div>
+            <PartnerCard key={index} partner={partner} />
           ))}
           
           {/* Duplicate for infinite scroll */}
           {partners.map((partner, index) => (
-            <div key={`dup-${index}`} className="flex flex-col items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-pointer group/item">
-                <div className="p-4 rounded-xl bg-white/5 border border-white/10 group-hover/item:border-[hsl(var(--brand-purple))] transition-colors">
-                    <div className="text-white group-hover/item:text-[hsl(var(--brand-purple))] transition-colors">
-                        {partner.icon}
-                    </div>
-                </div>
-                <span className="text-sm font-medium text-gray-500 group-hover/item:text-white transition-colors">{partner.name}</span>
-            </div>
+            <PartnerCard key={`dup-${index}`} partner={partner} />
           ))}
-           {/* Triplicate for safety on wide screens */}
+
+           {/* Triplicate for safety on wide screens and seamlessness */}
            {partners.map((partner, index) => (
-            <div key={`tri-${index}`} className="flex flex-col items-center gap-3 opacity-50 hover:opacity-100 transition-opacity cursor-pointer group/item">
-                <div className="p-4 rounded-xl bg-white/5 border border-white/10 group-hover/item:border-[hsl(var(--brand-purple))] transition-colors">
-                    <div className="text-white group-hover/item:text-[hsl(var(--brand-purple))] transition-colors">
-                        {partner.icon}
-                    </div>
-                </div>
-                <span className="text-sm font-medium text-gray-500 group-hover/item:text-white transition-colors">{partner.name}</span>
-            </div>
+            <PartnerCard key={`tri-${index}`} partner={partner} />
           ))}
         </div>
       </div>
     </section>
   );
 }
+
+interface Partner {
+    name: string;
+    icon: React.ReactNode;
+    type: string;
+}
+
+function PartnerCard({ partner }: { partner: Partner }) {
+    // Assign specific colors for each partner type or name to make it vibrant
+    const getIconColor = (name: string) => {
+        if (name === "UFG") return "text-red-500";
+        if (name === "HubGoiás") return "text-orange-500";
+        if (name === "GDC") return "text-blue-500";
+        if (name === "AKCIT") return "text-green-500";
+        if (name === "Inova Goiás") return "text-yellow-500";
+        if (name === "GovTech") return "text-cyan-500";
+        return "text-[hsl(var(--brand-purple))]";
+    };
+
+    return (
+        <div className="flex flex-col items-center gap-3 opacity-70 hover:opacity-100 transition-opacity cursor-pointer group/item w-32 md:w-40 shrink-0">
+            <div className="p-4 md:p-6 rounded-xl bg-white/5 border border-white/10 group-hover/item:border-[hsl(var(--brand-purple))] transition-colors w-full flex justify-center aspect-square items-center">
+                <div className={`${getIconColor(partner.name)} transition-colors transform group-hover/item:scale-110 duration-300`}>
+                    {React.cloneElement(partner.icon as React.ReactElement, { size: 48 })}  
+                </div>
+            </div>
+            <span className="text-sm font-medium text-gray-400 group-hover/item:text-white transition-colors text-wrap text-center">{partner.name}</span>
+        </div>
+    )
+}
+
+
