@@ -7,11 +7,11 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const partners = [
   { name: "UFG", icon: <GraduationCap size={40} />, type: "Universidade" },
-  { name: "HubGoiás", icon: <Rocket size={40} />, type: "Aceleradora" },
-  { name: "GDC", icon: <Code2 size={40} />, type: "Parceiro Tech - Google" },
-  { name: "AKCIT", icon: <Globe2 size={40} />, type: "Aceleradora - AKCIT" },
-  { name: "Inova Goiás", icon: <Building2 size={40} />, type: "Governo" },
-  { name: "GovTech", icon: <Cpu size={40} />, type: "Governo" },
+  { name: "INF", icon: <Rocket size={40} />, type: "Aceleradora" },
+  { name: "Gustavo", icon: <Code2 size={40} />, type: "CEO" },
+  { name: "Heitor", icon: <Globe2 size={40} />, type: "CMO" },
+  { name: "Arthur", icon: <Building2 size={40} />, type: "CTO" },
+  { name: "Felipe", icon: <Cpu size={40} />, type: "CPO" },
 ];
 
 export function Partners() {
@@ -59,11 +59,11 @@ function PartnerCard({ partner }: { partner: Partner }) {
     // Assign specific colors for each partner type or name to make it vibrant
     const getIconColor = (name: string) => {
         if (name === "UFG") return "text-red-500";
-        if (name === "HubGoiás") return "text-orange-500";
-        if (name === "GDC") return "text-blue-500";
-        if (name === "AKCIT") return "text-green-500";
-        if (name === "Inova Goiás") return "text-yellow-500";
-        if (name === "GovTech") return "text-cyan-500";
+        if (name === "INF") return "text-orange-500";
+        if (name === "Gustavo") return "text-blue-500";
+        if (name === "Heitor") return "text-green-500";
+        if (name === "Arthur") return "text-cyan-500";
+        if (name === "Felipe") return "text-[hsl(var(--brand-purple))]";
         return "text-[hsl(var(--brand-purple))]";
     };
 
