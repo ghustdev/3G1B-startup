@@ -1,4 +1,4 @@
-# 3G1B Startup - Digital Innovation Studio
+# 3G1B Startup - Digital Innovation Studio (Made with Antigravity by Google)
 <img width="1584" height="396" alt="3G1B" src="https://github.com/user-attachments/assets/50f50aa7-26fd-4662-92f8-81321eb7e1f4" />
 
 https://3g1b-startup.vercel.app
